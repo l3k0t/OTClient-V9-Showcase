@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 800" role="img" aria-label="OTClient V9, evolução técnica da base OTCv8">
+<defs><linearGradient id="a" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#061525"/><stop offset=".53" stop-color="#09233b"/><stop offset="1" stop-color="#25170f"/></linearGradient><linearGradient id="g"><stop stop-color="#fff4c5"/><stop offset=".37" stop-color="#ecc374"/><stop offset=".65" stop-color="#b77c35"/><stop offset="1" stop-color="#f6dba4"/></linearGradient><linearGradient id="blue"><stop stop-color="#7be6ff"/><stop offset="1" stop-color="#377dd7"/></linearGradient><pattern id="grid" width="55" height="55" patternUnits="userSpaceOnUse"><path d="M55 0H0V55" fill="none" stroke="#74a3be" stroke-opacity=".12"/></pattern><filter id="shadow"><feGaussianBlur stdDeviation="15"/></filter></defs>
+<rect width="1600" height="800" fill="url(#a)"/><rect width="1600" height="800" fill="url(#grid)"/>
+<circle cx="440" cy="358" r="275" fill="#1879ac" opacity=".14" filter="url(#shadow)"/><circle cx="1190" cy="356" r="290" fill="#ad6730" opacity=".19" filter="url(#shadow)"/>
+<path d="M0 595q166-107 319-38t319-22t300 53t340-58t322-45v315H0Z" fill="#0b2032"/>
+<path d="M0 679q181-65 377-10t362-25t417 35t444-44v165H0Z" fill="#081621"/>
+<g stroke="#e5bc73" stroke-opacity=".45" fill="none"><rect x="54" y="50" width="1492" height="700" rx="29" stroke-width="3"/><path d="M800 168v465" stroke-width="3" stroke-dasharray="7 15"/><circle cx="800" cy="383" r="88" stroke-width="5" opacity=".8"/></g>
+<g text-anchor="middle" font-family="Arial,sans-serif">
+<text x="800" y="128" fill="url(#g)" font-size="82" font-weight="900" letter-spacing="-2">OTClient V9</text>
+<text x="800" y="168" fill="#a3bccb" font-size="21" letter-spacing="7">DO CLÁSSICO AO MODERNO</text>
+<text x="398" y="260" fill="#a5c9de" font-size="39" font-weight="800">OTCv8</text>
+<text x="1204" y="260" fill="#f1c77b" font-size="39" font-weight="800">V9 • C++23</text>
+</g>
+<g transform="translate(379 415)">
+<path d="M-99-84-72-125H72L99-84V91L0 148-99 91Z" fill="#18314a" stroke="#79b4dc" stroke-width="12"/>
+<path d="M-65-60H65V32H-65Z" fill="#577691"/><path d="M-65-60H-8V-3H-65ZM8-3H65V32H8Z" fill="#8ea9b8"/>
+<path d="M-32 51H35M-32 75H35" stroke="#b2cbd9" stroke-width="12"/>
+</g>
+<g transform="translate(1201 411)">
+<path d="M-121-110-72-160H72L121-110V105L0 178-121 105Z" fill="#4f311f" stroke="#ecc071" stroke-width="13"/>
+<path d="M0-96 28-36 99-27 47 21 60 90 0 56-60 90-47 21-99-27-28-36Z" fill="url(#g)" stroke="#f7d898" stroke-width="8"/>
+<path d="M-70 111H70" stroke="#d3a25c" stroke-width="8"/>
+</g>
+<path d="M735 383h128l-38-39m38 39-38 39" stroke="url(#g)" stroke-width="17" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<g font-family="Arial,sans-serif" font-weight="800" text-anchor="middle" font-size="22">
+<g fill="#b4d9e9"><text x="399" y="633">C++17</text><text x="399" y="670">DAT / SPR</text></g>
+<g fill="#f4d495"><text x="1198" y="633">PROTOCOLOS MODERNOS</text><text x="1198" y="670">SPRITE SHEETS • PROTOBUF</text></g>
+</g>
+<g text-anchor="middle"><text x="800" y="728" fill="#e3b879" font-size="28" font-weight="bold" font-family="Georgia,serif" letter-spacing="4">DESENVOLVIDO POR L3K0T</text></g>
+</svg>
