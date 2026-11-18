@@ -87,8 +87,10 @@
     .lang-switch a:hover:not([aria-current="page"]){background:#203a53;color:#fff}
     @media(max-width:600px){.links{gap:8px}.links .navcta{display:none}.lang-switch a{padding:6px}.navin{gap:9px}}
   </style>
+  <link rel="stylesheet" href="assets/v9-effects.css" />
 </head>
 <body>
+<div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
 <header class="nav"><div class="wrap navin">
   <a href="#inicio" class="brand">OTCLIENT <b>V9</b></a>
   <nav class="links" aria-label="Main navigation">
@@ -98,7 +100,23 @@
   </nav>
 </div></header>
 <main id="inicio">
-  <div class="wrap hero"><div class="art"><img src="assets/otclient-v9-arte-principal.svg" width="1672" height="941" alt="OTClient V9 2D fantasy illustration featuring a warrior, magic, and monsters" fetchpriority="high"></div></div>
+  <div class="wrap hero">
+  <div class="art hero-parallax" data-parallax-stage aria-label="Layered OTClient V9 fantasy scene">
+    <img class="parallax-layer parallax-base" data-depth="5" src="assets/otclient-v9-arte-principal.svg" width="1600" height="850" alt="Layered OTClient V9 fantasy scene" fetchpriority="high" />
+    <img class="parallax-layer parallax-magic" data-depth="15" src="assets/v9-parallax-magic.svg" width="1600" height="850" alt="" aria-hidden="true" />
+    <img class="parallax-layer parallax-sparks" data-depth="28" src="assets/v9-parallax-sparks.svg" width="1600" height="850" alt="" aria-hidden="true" />
+    <span class="parallax-flag"><span class="spark" aria-hidden="true"></span>INTERACTIVE ART · 2.5D PARALLAX</span>
+  </div>
+  <div class="headtrack-controls">
+    <div class="headtrack-panel">
+      <span class="headtrack-label">Explore the scene in depth</span>
+      <button type="button" class="headtrack-btn" data-head-start>Enable head tracking</button>
+      <button type="button" class="headtrack-btn secondary" data-head-stop hidden>Turn off camera</button>
+      <p class="headtrack-status" role="status" aria-live="polite" data-head-status>Move the pointer or touch the artwork. Camera is optional.</p>
+    </div>
+  </div>
+  <video class="sensor-video" data-head-video autoplay muted playsinline aria-hidden="true"></video>
+</div>
   <section class="wrap intro">
     <span class="status"><span class="dot"></span> Active development · Public showcase</span>
     <div class="eyebrow" style="margin-top:28px">OTClient V9 · By L3K0T</div>
@@ -110,13 +128,20 @@
 
   <section class="section" id="novidades"><div class="wrap">
     <div class="section-head"><div class="eyebrow">What's changed</div><h2>More than a new version.<br><span class="gradient">A modernized foundation.</span></h2><p class="sub">Technical improvements and systems integrated into OTCv8, including adaptations from OTClient Redemption where needed.</p></div>
+    <div class="feature-explorer" role="group" aria-label="Explore features:">
+  <button type="button" data-feature-filter="all" aria-pressed="true">All</button>
+  <button type="button" data-feature-filter="core" aria-pressed="false">Core</button>
+  <button type="button" data-feature-filter="graphics" aria-pressed="false">Graphics</button>
+  <button type="button" data-feature-filter="systems" aria-pressed="false">Systems</button>
+  <button type="button" data-feature-filter="interface" aria-pressed="false">Interface</button>
+</div>
     <div class="cards">
-      <article class="card"><span class="icon">⚙️</span><h3>C++23 Core</h3><p>Full C++23 builds, compatibility fixes, modern CMake, and organized dependencies.</p></article>
-      <article class="card"><span class="icon">🌐</span><h3>Profile-based protocols</h3><p>ProtocolProfile, ProtocolRegistry, and capability controls for different Tibia generations.</p></article>
-      <article class="card"><span class="icon">🎨</span><h3>Modern sprites</h3><p>Compressed sprite sheets, catalogs, appearances, and rendering integration.</p></article>
-      <article class="card"><span class="icon">📖</span><h3>Cyclopedia and challenges</h3><p>Cyclopedia, Bestiary, Bosstiary, Character Inspection, Taskboard, and Soulseals.</p></article>
-      <article class="card"><span class="icon">⚔️</span><h3>Progression and combat</h3><p>Exaltation Forge, Wheel of Destiny, Weapon Proficiency, Monk, and Attached Effects.</p></article>
-      <article class="card"><span class="icon">🧩</span><h3>More systems</h3><p>Reward Wall, modern Store, Quick Loot, Stash, Health Circle, Analyser, and adapted interfaces.</p></article>
+      <article class="card" data-feature="core"><span class="icon">⚙️</span><h3>C++23 Core</h3><p>Full C++23 builds, compatibility fixes, modern CMake, and organized dependencies.</p></article>
+      <article class="card" data-feature="core"><span class="icon">🌐</span><h3>Profile-based protocols</h3><p>ProtocolProfile, ProtocolRegistry, and capability controls for different Tibia generations.</p></article>
+      <article class="card" data-feature="graphics"><span class="icon">🎨</span><h3>Modern sprites</h3><p>Compressed sprite sheets, catalogs, appearances, and rendering integration.</p></article>
+      <article class="card" data-feature="systems"><span class="icon">📖</span><h3>Cyclopedia and challenges</h3><p>Cyclopedia, Bestiary, Bosstiary, Character Inspection, Taskboard, and Soulseals.</p></article>
+      <article class="card" data-feature="systems"><span class="icon">⚔️</span><h3>Progression and combat</h3><p>Exaltation Forge, Wheel of Destiny, Weapon Proficiency, Monk, and Attached Effects.</p></article>
+      <article class="card" data-feature="interface"><span class="icon">🧩</span><h3>More systems</h3><p>Reward Wall, modern Store, Quick Loot, Stash, Health Circle, Analyser, and adapted interfaces.</p></article>
     </div>
   </div></section>
 
@@ -132,6 +157,10 @@
 
   <section class="section" id="protocolos"><div class="wrap">
     <div class="eyebrow">Responsible compatibility claims</div><h2>Protocol support in progress</h2><p class="sub">Code integration alone does not prove in-game functionality. This table reflects the actual development targets.</p>
+    <div class="protocol-explorer" role="group" aria-label="Explore protocol status:">
+  <div class="protocol-switch"><button type="button" data-protocol-button="8.60" aria-pressed="true">8.60</button><button type="button" data-protocol-button="10.98" aria-pressed="false">10.98</button><button type="button" data-protocol-button="15.11" aria-pressed="false">15.11</button><button type="button" data-protocol-button="15.25" aria-pressed="false">15.25</button></div>
+  <p class="protocol-description" data-protocol-description>Classic generation. Goal: preserve compatibility; regression tests are still pending.</p>
+</div>
     <div class="table-wrap"><table aria-label="OTClient V9 protocol status"><thead><tr><th>Protocol</th><th>Goal</th><th>Status</th></tr></thead><tbody>
       <tr><td><strong>8.60</strong></td><td>Classic generation</td><td><span class="phase">Regression testing pending</span></td></tr>
       <tr><td><strong>10.98</strong></td><td>Transitional generation</td><td><span class="phase">Regression testing pending</span></td></tr>
@@ -163,5 +192,6 @@
     link.rel = 'noopener noreferrer';
   });
 </script>
+<script src="assets/v9-interactive.js" defer></script>
 </body>
 </html>
