@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#070e1b" />
+  <meta name="description" content="OTClient V9 by L3K0T: a C++23 evolution of OTCv8 with modern sprites, protocols, and Tibia systems under development." />
+  <title>OTClient V9 | The Next Evolution — L3K0T</title>
+<link rel="alternate" hreflang="pt-BR" href="index.html" /><link rel="alternate" hreflang="en" href="index-en.html" /><link rel="alternate" hreflang="es" href="index-es.html" />
+  <style>
+    :root { --bg: #060e1a; --bg2:#0b1728; --panel:#0e1b2d; --white:#f5f1e7; --muted:#aeb8c4; --gold:#f0c37b; --gold2:#ae7946; --blue:#59b9ff; --line:rgba(228,197,141,.18); --radius:21px; }
+    * {box-sizing: border-box}
+    html {scroll-behavior:smooth}
+    body { margin:0; background:radial-gradient(circle at 70% 0%, #193752 0,transparent 33%),var(--bg); font:16px/1.67 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--white); }
+    a {color:inherit; text-decoration:none}
+    a:focus-visible,button:focus-visible {outline:3px solid var(--blue);outline-offset:4px}
+    img {max-width:100%;display:block}
+    ::selection {background:#a67943;color:#07101a}
+    .wrap {width:min(1160px,calc(100% - 42px));margin:0 auto}
+    .nav {position:sticky;top:0;z-index:20; background:rgba(6,14,26,.87);border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}
+    .navin {display:flex;align-items:center;justify-content:space-between;gap:22px;min-height:70px}
+    .brand {font-weight:900;font-size:1.12rem;letter-spacing:.04em;white-space:nowrap}
+    .brand b {color:var(--gold)}
+    .links {display:flex;gap:26px;align-items:center;font-size:.9rem;font-weight:650;color:#cfd9e4}
+    .links>a:not(.navcta):hover{color:var(--gold)}
+    .navcta,.button {display:inline-flex;gap:10px;align-items:center;justify-content:center;padding:12px 20px;border-radius:10px; font-weight:800;background:linear-gradient(120deg,#f6d49c,#d89f53);color:#14151b;border:1px solid #f5d6a1;box-shadow:0 8px 25px #0005;transition:transform .18s,filter .18s}
+    .navcta {padding:9px 16px}
+    .button:hover,.navcta:hover {transform:translateY(-2px);filter:brightness(1.07)}
+    .button.secondary {background:rgba(8,24,41,.75);color:var(--white);border-color:#668299;box-shadow:none}
+    .hero {padding:29px 0 8px}
+    .art {position:relative;border:1px solid #c8a46a5a;border-radius:24px;overflow:hidden;box-shadow:0 28px 80px #000b,0 0 80px #98702e1c}
+    .art img {width:100%;height:auto;object-fit:cover}
+    .art:after {content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 75px #07111b7c}
+    .status {display:inline-flex;align-items:center;gap:8px;padding:7px 13px;border-radius:100px;border:1px solid #9a754b70;color:#f1c88c;background:#301d103b;font-weight:700;letter-spacing:.08em;font-size:.73rem;text-transform:uppercase}
+    .dot {width:7px;height:7px;background:#e6a957;border-radius:50%;box-shadow:0 0 9px #dbb16d}
+    .intro {text-align:center;padding:52px 0 72px;max-width:870px;margin:0 auto}
+    .eyebrow {text-transform:uppercase;letter-spacing:.24em;color:var(--gold);font-weight:800;font-size:.77rem}
+    h1,h2,h3,p{margin-top:0}
+    h1 {font-size:clamp(2.5rem,7vw,5.3rem);line-height:1.07;letter-spacing:-.07em;margin:21px 0;font-weight:900}
+    h2 {font-size:clamp(1.85rem,3.9vw,2.9rem);letter-spacing:-.045em;line-height:1.16;margin-bottom:15px}
+    .gradient {background:linear-gradient(90deg,#f6d7a1,#f7bb64,#fcebd0);color:transparent;background-clip:text}
+    .lead{font-size:clamp(1rem,2.3vw,1.17rem);color:#c2ccd5;max-width:780px;margin:0 auto 24px}
+    .actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .small-note{color:#9cabb9;font-size:.88rem;margin-top:19px}
+    .section{padding:72px 0;border-top:1px solid var(--line)}
+    .section .sub{color:var(--muted);max-width:770px;margin-bottom:30px}
+    .section-head {max-width:780px;margin-bottom:35px}
+    .cards {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .card {padding:26px;border-radius:var(--radius);border:1px solid var(--line);background:linear-gradient(145deg,#112237,#0b1525);box-shadow:0 14px 35px #0002}
+    .card::before{content:"";display:block;width:40px;height:3px;background:linear-gradient(90deg,var(--gold),transparent);margin-bottom:20px}
+    .card h3 {font-size:1.11rem;margin-bottom:9px;letter-spacing:-.025em}
+    .card p {margin:0;color:var(--muted);font-size:.95rem}
+    .card .icon {font-size:1.45rem;display:inline-block;margin-bottom:8px}
+    .card.tall {grid-column:span 2}
+    .visual {border-radius:22px;overflow:hidden;border:1px solid #b99a685e;box-shadow:0 20px 50px #0008}
+    .visual img {width:100%}
+    .split {display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:60px;margin-top:36px}
+    .split h2 {margin-bottom:18px}
+    .checks {display:grid;gap:12px;padding:0;margin:21px 0;list-style:none;color:#d5dce5}
+    .checks li {padding-left:26px;position:relative}
+    .checks li:before {content:"✓";position:absolute;left:0;color:var(--gold);font-weight:900}
+    .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:#0b1829}
+    table{width:100%;border-collapse:collapse;text-align:left;min-width:550px}
+    th,td{padding:17px 20px;border-bottom:1px solid var(--line)}
+    th{color:var(--gold);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;background:#101f31}
+    td{color:#cbd4de}
+    tr:last-child td{border:0}
+    .phase{display:inline-block;border-radius:20px;padding:4px 10px;font-size:.74rem;font-weight:800;white-space:nowrap;background:#172b3a;color:#b8dfef;border:1px solid #4784a04f}
+    .phase.warn {background:#302216;color:#f4c693;border-color:#a27e4f63}
+    .notice{border-left:3px solid #efb969;background:linear-gradient(90deg,#30271a89,#121e2a);border-radius:0 14px 14px 0;padding:18px 22px;color:#e0cdb0;margin-top:20px}
+    .divider {height:1px;background:var(--line);margin:30px 0}
+    .cta {padding:45px 40px;text-align:center;background:radial-gradient(circle at 50% 0%,#5e462b42,transparent 70%),linear-gradient(155deg,#11243a,#0d1726);border:1px solid #f3c87d55;border-radius:25px;box-shadow:0 20px 70px #0006}
+    .cta h2{max-width:750px;margin:14px auto}
+    .cta p{max-width:730px;color:#b9c5d0;margin:0 auto 25px}
+    .footer {padding:33px 0 52px;display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap;color:#95a6b8;font-size:.82rem;border-top:1px solid var(--line)}
+    .footer strong{color:#ead0a4}
+    .foot-links{display:flex;gap:18px;flex-wrap:wrap}
+    .foot-links a:hover{color:var(--gold)}
+    @media(max-width:840px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.split{grid-template-columns:1fr;gap:30px}.links a:not(.navcta){display:none}}
+    @media(max-width:600px){.wrap{width:min(100% - 28px,1160px)}.navin{min-height:62px}.brand{font-size:.99rem}.navcta{padding:7px 11px;font-size:.8rem}.hero{padding-top:14px}.art{border-radius:14px}.intro{padding:37px 0 50px}h1{letter-spacing:-.055em}.section{padding:49px 0}.cards{grid-template-columns:1fr}.card.tall{grid-column:span 1}.card{padding:23px}.cta{padding:35px 19px}.footer{padding-bottom:32px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button,.navcta{transition:none}}
+
+    .lang-switch{display:flex;align-items:center;gap:4px;border:1px solid var(--line);border-radius:10px;padding:4px;background:#0b1a2c}
+    .lang-switch a{font-size:.78rem;line-height:1.3;font-weight:800;letter-spacing:.03em;color:#c5cfdb;padding:6px 8px;border-radius:7px}
+    .lang-switch a[aria-current="page"]{background:#b98848;color:#111a25}
+    .lang-switch a:hover:not([aria-current="page"]){background:#203a53;color:#fff}
+    @media(max-width:600px){.links{gap:8px}.links .navcta{display:none}.lang-switch a{padding:6px}.navin{gap:9px}}
+  </style>
+</head>
+<body>
+<header class="nav"><div class="wrap navin">
+  <a href="#inicio" class="brand">OTCLIENT <b>V9</b></a>
+  <nav class="links" aria-label="Main navigation">
+    <a href="#novidades">What's New</a><a href="#graficos">Sprites</a><a href="#protocolos">Protocols</a>
+    <a class="navcta" data-project-link href="https://github.com/l3k0t">☆ Star on GitHub</a>
+    <div class="lang-switch" role="navigation" aria-label="Choose language"><a href="index.html" lang="pt-BR" hreflang="pt-BR" title="Português">PT</a><a href="index-en.html" lang="en" hreflang="en" title="English" aria-current="page">EN</a><a href="index-es.html" lang="es" hreflang="es" title="Español">ES</a></div>
+  </nav>
+</div></header>
+<main id="inicio">
+  <div class="wrap hero"><div class="art"><img src="assets/otclient-v9-arte-principal.svg" width="1672" height="941" alt="OTClient V9 2D fantasy illustration featuring a warrior, magic, and monsters" fetchpriority="high"></div></div>
+  <section class="wrap intro">
+    <span class="status"><span class="dot"></span> Active development · Public showcase</span>
+    <div class="eyebrow" style="margin-top:28px">OTClient V9 · By L3K0T</div>
+    <h1>A new <span class="gradient">evolution</span> is coming.</h1>
+    <p class="lead">The spirit of OTCv8 in a codebase modernized for <strong>C++23</strong>, featuring modern sprite loading, new modules, and an architecture targeting Tibia protocols up to <strong>15.25</strong> — still under validation.</p>
+    <div class="actions"><a class="button" href="#novidades">Explore new features ↓</a><a class="button secondary" data-project-link href="https://github.com/l3k0t">☆ Star on GitHub</a></div>
+    <p class="small-note">Work in progress. Illustrative showcase only; no source code or client downloads.</p>
+  </section>
+
+  <section class="section" id="novidades"><div class="wrap">
+    <div class="section-head"><div class="eyebrow">What's changed</div><h2>More than a new version.<br><span class="gradient">A modernized foundation.</span></h2><p class="sub">Technical improvements and systems integrated into OTCv8, including adaptations from OTClient Redemption where needed.</p></div>
+    <div class="cards">
+      <article class="card"><span class="icon">⚙️</span><h3>C++23 Core</h3><p>Full C++23 builds, compatibility fixes, modern CMake, and organized dependencies.</p></article>
+      <article class="card"><span class="icon">🌐</span><h3>Profile-based protocols</h3><p>ProtocolProfile, ProtocolRegistry, and capability controls for different Tibia generations.</p></article>
+      <article class="card"><span class="icon">🎨</span><h3>Modern sprites</h3><p>Compressed sprite sheets, catalogs, appearances, and rendering integration.</p></article>
+      <article class="card"><span class="icon">📖</span><h3>Cyclopedia and challenges</h3><p>Cyclopedia, Bestiary, Bosstiary, Character Inspection, Taskboard, and Soulseals.</p></article>
+      <article class="card"><span class="icon">⚔️</span><h3>Progression and combat</h3><p>Exaltation Forge, Wheel of Destiny, Weapon Proficiency, Monk, and Attached Effects.</p></article>
+      <article class="card"><span class="icon">🧩</span><h3>More systems</h3><p>Reward Wall, modern Store, Quick Loot, Stash, Health Circle, Analyser, and adapted interfaces.</p></article>
+    </div>
+  </div></section>
+
+  <section class="section" id="graficos"><div class="wrap">
+    <div class="eyebrow">A major milestone</div><h2>From DAT/SPR to<br><span class="gradient">modern game assets.</span></h2>
+    <p class="sub">V9 introduces a modern asset-loading path for newer Tibia formats while retaining the legacy path for older clients.</p>
+    <div class="visual"><img src="assets/otclient-v9-evolucao.svg" loading="lazy" width="1774" height="887" alt="OTClient V9 2D artwork illustrating the evolution from classic to modern"></div>
+    <div class="split">
+      <div><h2>One codebase, two generations.</h2><p class="sub">Rather than relying solely on classic files, the client can recognize modern graphics structures.</p></div>
+      <ul class="checks"><li>Sprite sheets and LZMA decompression</li><li>Catalog and protobuf appearances</li><li>Modern data and animation loading</li><li>Version-aware asset detection</li><li>Legacy compatibility remains a goal</li></ul>
+    </div>
+  </div></section>
+
+  <section class="section" id="protocolos"><div class="wrap">
+    <div class="eyebrow">Responsible compatibility claims</div><h2>Protocol support in progress</h2><p class="sub">Code integration alone does not prove in-game functionality. This table reflects the actual development targets.</p>
+    <div class="table-wrap"><table aria-label="OTClient V9 protocol status"><thead><tr><th>Protocol</th><th>Goal</th><th>Status</th></tr></thead><tbody>
+      <tr><td><strong>8.60</strong></td><td>Classic generation</td><td><span class="phase">Regression testing pending</span></td></tr>
+      <tr><td><strong>10.98</strong></td><td>Transitional generation</td><td><span class="phase">Regression testing pending</span></td></tr>
+      <tr><td><strong>15.11</strong></td><td>Canary integration</td><td><span class="phase warn">Validation in progress</span></td></tr>
+      <tr><td><strong>15.25</strong></td><td>Modern features</td><td><span class="phase warn">Development and testing</span></td></tr>
+    </tbody></table></div>
+    <div class="notice"><strong>Transparency:</strong> the client has passed C++23 builds on Windows and Linux. Full login, sprite rendering, and gameplay still require real-world testing for each protocol.</div>
+  </div></section>
+
+  <section class="section"><div class="wrap"><div class="cta">
+    <div class="eyebrow">Follow development</div>
+    <h2>Like the project?<br><span class="gradient">Star it and stay informed.</span></h2>
+    <p>Click <strong>Star ⭐</strong> in the public repository to support OTClient V9. Also enable <strong>Watch</strong> to follow updates, new features, and future release announcements.</p>
+    <div class="actions"><a class="button" data-project-link href="https://github.com/l3k0t">☆ Star the project</a><a class="button secondary" href="https://github.com/l3k0t" target="_blank" rel="noreferrer">Meet L3K0T ↗</a></div>
+    <p class="small-note">The first BETA release will be announced after the required validation.</p>
+  </div></div></section>
+</main>
+<footer class="wrap footer"><div><strong>OTClient V9 · L3K0T</strong><div>Development showcase · 2026</div></div><div class="foot-links"><a href="https://github.com/OTCv8/otcv8-dev">OTCv8</a><a href="https://github.com/opentibiabr/otclient">OTClient Redemption</a><a href="https://github.com/opentibiabr/canary">Canary</a></div><div style="max-width:360px">The artwork is illustrative. Original projects retain their respective credits and licenses.</div></footer>
+<script>
+  // Em GitHub Pages, aponta automaticamente para o repositório que hospeda este site.
+  // Em visualização local, usa o nome sugerido para o repositório público.
+  const repoName = window.location.hostname.endsWith('.github.io')
+    ? (window.location.pathname.split('/').filter(Boolean)[0] || 'OTClient-V9-Showcase')
+    : 'OTClient-V9-Showcase';
+  const projectUrl = 'https://github.com/l3k0t/' + encodeURIComponent(repoName);
+  document.querySelectorAll('[data-project-link]').forEach(link => {
+    link.href = projectUrl;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+  });
+</script>
+</body>
+</html>
