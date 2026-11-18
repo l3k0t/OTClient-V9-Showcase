@@ -23,7 +23,7 @@
 
 O **OTClient V9** é um projeto de modernização do **OTCv8**, mantendo sua identidade e ecossistema Lua/OTUI e ampliando a estrutura do cliente para atender aos protocolos e sistemas modernos do Tibia. A evolução técnica inclui o **C++23**, nova organização de funcionalidades por versão e suporte ao carregamento de recursos gráficos que não estavam presentes no carregador original da base comparada.
 
-O desenvolvimento utiliza o **OTClient Redemption** como referência e fonte de adaptações de sistemas modernos; o **Canary** é a referência de comportamento de servidor e protocolos. Os créditos das bases e bibliotecas são preservados.
+O desenvolvimento utiliza o **Tibia Client** como referência e fonte de adaptações de sistemas modernos; o **Canary** é a referência de comportamento de servidor e protocolos. Os créditos das bases e bibliotecas são preservados.
 
 ## Destaques da evolução
 
