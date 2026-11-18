@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/otclient-v9-arte-principal.webp" alt="Arte oficial de apresentação do OTClient V9: personagens e criaturas em cenário medieval fantástico" width="100%" />
+  <img src="assets/otclient-v9-arte-principal.svg" alt="Arte oficial de apresentação do OTClient V9: personagens e criaturas em cenário medieval fantástico" width="100%" />
 
   # ⚔️ OTClient V9
 
@@ -39,7 +39,7 @@ O desenvolvimento utiliza o **OTClient Redemption** como referência e fonte de 
 - Seleção de assets conforme a versão; preservação do carregador DAT/SPR para protocolos antigos.
 - Verificação de arquivos antes da conexão e correções de sincronização durante o carregamento de sprites.
 
-<img src="assets/otclient-v9-evolucao.webp" alt="Arte do OTClient V9 mostrando a evolução visual do clássico para o moderno, com mago e cavaleiro" width="100%" />
+<img src="assets/otclient-v9-evolucao.svg" alt="Arte do OTClient V9 mostrando a evolução visual do clássico para o moderno, com mago e cavaleiro" width="100%" />
 
 ### 🧩 Módulos e sistemas adicionados ou adaptados
 
