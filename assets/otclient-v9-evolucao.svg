@@ -9,14 +9,14 @@
 <text x="800" y="128" fill="url(#g)" font-size="82" font-weight="900" letter-spacing="-2">OTClient V9</text>
 <text x="800" y="168" fill="#a3bccb" font-size="21" letter-spacing="7">DO CLÁSSICO AO MODERNO</text>
 <text x="398" y="260" fill="#a5c9de" font-size="39" font-weight="800">OTCv8</text>
-<text x="1204" y="260" fill="#f1c77b" font-size="39" font-weight="800">V9 • C++23</text>
+<text x="1204" y="224" fill="#f1c77b" font-size="39" font-weight="800">V9 • C++23</text>
 </g>
 <g transform="translate(379 415)">
 <path d="M-99-84-72-125H72L99-84V91L0 148-99 91Z" fill="#18314a" stroke="#79b4dc" stroke-width="12"/>
 <path d="M-65-60H65V32H-65Z" fill="#577691"/><path d="M-65-60H-8V-3H-65ZM8-3H65V32H8Z" fill="#8ea9b8"/>
 <path d="M-32 51H35M-32 75H35" stroke="#b2cbd9" stroke-width="12"/>
 </g>
-<g transform="translate(1201 411)">
+<g transform="translate(1201 441)">
 <path d="M-121-110-72-160H72L121-110V105L0 178-121 105Z" fill="#4f311f" stroke="#ecc071" stroke-width="13"/>
 <path d="M0-96 28-36 99-27 47 21 60 90 0 56-60 90-47 21-99-27-28-36Z" fill="url(#g)" stroke="#f7d898" stroke-width="8"/>
 <path d="M-70 111H70" stroke="#d3a25c" stroke-width="8"/>
