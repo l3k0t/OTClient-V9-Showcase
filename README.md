@@ -1,3 +1,6 @@
+<p align="center"><b>🌐 Language / Idioma:</b> <a href="README.md">🇧🇷 Português</a> · <a href="README.en.md">🇺🇸 English</a> · <a href="README.es.md">🇪🇸 Español</a></p>
+<p align="center"><a href="index.html">Site PT</a> · <a href="index-en.html">English site</a> · <a href="index-es.html">Sitio ES</a></p>
+
 <div align="center">
   <img src="assets/otclient-v9-arte-principal.svg" alt="Arte oficial de apresentação do OTClient V9: personagens e criaturas em cenário medieval fantástico" width="100%" />
 
