@@ -1,0 +1,13 @@
+⚔️ OTClient V9 — Uma nova evolução está em desenvolvimento!
+
+Estou modernizando a base do OTCv8 para C++23 e integrando recursos para os protocolos modernos do Tibia: carregamento de Sprite Sheets e appearances, novos componentes de protocolo, Cyclopedia, Bosstiary, Forge, Wheel, Taskboard e muito mais.
+
+O projeto também está recebendo melhorias de compilação, estabilidade, integração com Canary e adaptação de módulos modernos.
+
+🚧 O V9 está em desenvolvimento. Os protocolos até 15.25 são alvos de implementação e validação, não uma promessa de compatibilidade já finalizada.
+
+⭐ Curtiu o projeto? Entre no meu GitHub, favorite o repositório público clicando em STAR e ative o WATCH para ficar por dentro das próximas atualizações!
+
+GitHub: https://github.com/l3k0t/OTClient-V9-Showcase
+
+Desenvolvimento: L3K0T
