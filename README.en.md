@@ -1,6 +1,8 @@
 <p align="center"><b>🌐 Language / Idioma:</b> <a href="README.md">🇧🇷 Português</a> · <a href="README.en.md">🇺🇸 English</a> · <a href="README.es.md">🇪🇸 Español</a></p>
 <p align="center"><a href="index.html">Site PT</a> · <a href="index-en.html">English site</a> · <a href="index-es.html">Sitio ES</a></p>
 
+<p align="center"><img alt="Animated title: OTClient V9, C++23, modern sprites and protocols" src="https://readme-typing-svg.demolab.com?font=Fira+Code&amp;weight=700&amp;size=23&amp;pause=1400&amp;duration=3100&amp;color=E5C084&amp;center=true&amp;vCenter=true&amp;width=760&amp;height=55&amp;lines=OTClient+V9+%7C+C%2B%2B23;Modern+Sprites+%7C+Protocols;OTCv8+Evolution+%7C+L3K0T" /></p>
+
 <div align="center">
   <img src="assets/otclient-v9-arte-principal.svg" alt="OTClient V9 fantasy showcase artwork with a warrior and magical creatures" width="100%" />
 
