@@ -87,8 +87,10 @@
     .lang-switch a:hover:not([aria-current="page"]){background:#203a53;color:#fff}
     @media(max-width:600px){.links{gap:8px}.links .navcta{display:none}.lang-switch a{padding:6px}.navin{gap:9px}}
   </style>
+  <link rel="stylesheet" href="assets/v9-effects.css" />
 </head>
 <body>
+<div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
 <header class="nav"><div class="wrap navin">
   <a href="#inicio" class="brand">OTCLIENT <b>V9</b></a>
   <nav class="links" aria-label="Navegación principal">
@@ -98,7 +100,23 @@
   </nav>
 </div></header>
 <main id="inicio">
-  <div class="wrap hero"><div class="art"><img src="assets/otclient-v9-arte-principal.svg" width="1672" height="941" alt="Ilustración fantástica 2D de OTClient V9 con guerrero, magia y criaturas" fetchpriority="high"></div></div>
+  <div class="wrap hero">
+  <div class="art hero-parallax" data-parallax-stage aria-label="Escenario medieval OTClient V9 por capas">
+    <img class="parallax-layer parallax-base" data-depth="5" src="assets/otclient-v9-arte-principal.svg" width="1600" height="850" alt="Escenario medieval OTClient V9 por capas" fetchpriority="high" />
+    <img class="parallax-layer parallax-magic" data-depth="15" src="assets/v9-parallax-magic.svg" width="1600" height="850" alt="" aria-hidden="true" />
+    <img class="parallax-layer parallax-sparks" data-depth="28" src="assets/v9-parallax-sparks.svg" width="1600" height="850" alt="" aria-hidden="true" />
+    <span class="parallax-flag"><span class="spark" aria-hidden="true"></span>ARTE INTERACTIVO · PARALAJE 2.5D</span>
+  </div>
+  <div class="headtrack-controls">
+    <div class="headtrack-panel">
+      <span class="headtrack-label">Explora la escena en profundidad</span>
+      <button type="button" class="headtrack-btn" data-head-start>Activar movimiento de cabeza</button>
+      <button type="button" class="headtrack-btn secondary" data-head-stop hidden>Apagar cámara</button>
+      <p class="headtrack-status" role="status" aria-live="polite" data-head-status>Mueve el ratón o toca la imagen. Cámara opcional.</p>
+    </div>
+  </div>
+  <video class="sensor-video" data-head-video autoplay muted playsinline aria-hidden="true"></video>
+</div>
   <section class="wrap intro">
     <span class="status"><span class="dot"></span> Desarrollo activo · Presentación pública</span>
     <div class="eyebrow" style="margin-top:28px">OTClient V9 · Por L3K0T</div>
@@ -110,13 +128,20 @@
 
   <section class="section" id="novidades"><div class="wrap">
     <div class="section-head"><div class="eyebrow">Qué ha cambiado</div><h2>Más que una nueva versión.<br><span class="gradient">Una base modernizada.</span></h2><p class="sub">Mejoras técnicas y sistemas integrados en OTCv8, con adaptaciones de OTClient Redemption cuando es necesario.</p></div>
+    <div class="feature-explorer" role="group" aria-label="Explora funciones:">
+  <button type="button" data-feature-filter="all" aria-pressed="true">Todos</button>
+  <button type="button" data-feature-filter="core" aria-pressed="false">Núcleo</button>
+  <button type="button" data-feature-filter="graphics" aria-pressed="false">Gráficos</button>
+  <button type="button" data-feature-filter="systems" aria-pressed="false">Sistemas</button>
+  <button type="button" data-feature-filter="interface" aria-pressed="false">Interfaz</button>
+</div>
     <div class="cards">
-      <article class="card"><span class="icon">⚙️</span><h3>Núcleo C++23</h3><p>Compilación completa en C++23, mejoras de compatibilidad, CMake moderno y dependencias organizadas.</p></article>
-      <article class="card"><span class="icon">🌐</span><h3>Protocolos por perfil</h3><p>ProtocolProfile, ProtocolRegistry y capacidades para diferentes generaciones de Tibia.</p></article>
-      <article class="card"><span class="icon">🎨</span><h3>Sprites modernos</h3><p>Sprite Sheets comprimidas, catálogos, appearances e integración con el renderizador.</p></article>
-      <article class="card"><span class="icon">📖</span><h3>Cyclopedia y desafíos</h3><p>Cyclopedia, Bestiary, Bosstiary, Character Inspection, Taskboard y Soulseals.</p></article>
-      <article class="card"><span class="icon">⚔️</span><h3>Progresión y combate</h3><p>Exaltation Forge, Wheel of Destiny, Weapon Proficiency, Monk y Attached Effects.</p></article>
-      <article class="card"><span class="icon">🧩</span><h3>Más sistemas</h3><p>Reward Wall, Store moderna, Quick Loot, Stash, Health Circle, Analyser e interfaces adaptadas.</p></article>
+      <article class="card" data-feature="core"><span class="icon">⚙️</span><h3>Núcleo C++23</h3><p>Compilación completa en C++23, mejoras de compatibilidad, CMake moderno y dependencias organizadas.</p></article>
+      <article class="card" data-feature="core"><span class="icon">🌐</span><h3>Protocolos por perfil</h3><p>ProtocolProfile, ProtocolRegistry y capacidades para diferentes generaciones de Tibia.</p></article>
+      <article class="card" data-feature="graphics"><span class="icon">🎨</span><h3>Sprites modernos</h3><p>Sprite Sheets comprimidas, catálogos, appearances e integración con el renderizador.</p></article>
+      <article class="card" data-feature="systems"><span class="icon">📖</span><h3>Cyclopedia y desafíos</h3><p>Cyclopedia, Bestiary, Bosstiary, Character Inspection, Taskboard y Soulseals.</p></article>
+      <article class="card" data-feature="systems"><span class="icon">⚔️</span><h3>Progresión y combate</h3><p>Exaltation Forge, Wheel of Destiny, Weapon Proficiency, Monk y Attached Effects.</p></article>
+      <article class="card" data-feature="interface"><span class="icon">🧩</span><h3>Más sistemas</h3><p>Reward Wall, Store moderna, Quick Loot, Stash, Health Circle, Analyser e interfaces adaptadas.</p></article>
     </div>
   </div></section>
 
@@ -132,6 +157,10 @@
 
   <section class="section" id="protocolos"><div class="wrap">
     <div class="eyebrow">Compatibilidad con transparencia</div><h2>Protocolos en evolución</h2><p class="sub">Integrar código no demuestra que funcione dentro del juego. Esta tabla muestra los objetivos reales del desarrollo.</p>
+    <div class="protocol-explorer" role="group" aria-label="Explora los protocolos:">
+  <div class="protocol-switch"><button type="button" data-protocol-button="8.60" aria-pressed="true">8.60</button><button type="button" data-protocol-button="10.98" aria-pressed="false">10.98</button><button type="button" data-protocol-button="15.11" aria-pressed="false">15.11</button><button type="button" data-protocol-button="15.25" aria-pressed="false">15.25</button></div>
+  <p class="protocol-description" data-protocol-description>Generación clásica. Objetivo: mantener la compatibilidad; pruebas de regresión pendientes.</p>
+</div>
     <div class="table-wrap"><table aria-label="Estado de los protocolos de OTClient V9"><thead><tr><th>Protocolo</th><th>Objetivo</th><th>Estado</th></tr></thead><tbody>
       <tr><td><strong>8.60</strong></td><td>Versión clásica</td><td><span class="phase">Pruebas de regresión pendientes</span></td></tr>
       <tr><td><strong>10.98</strong></td><td>Versión de transición</td><td><span class="phase">Pruebas de regresión pendientes</span></td></tr>
@@ -163,5 +192,6 @@
     link.rel = 'noopener noreferrer';
   });
 </script>
+<script src="assets/v9-interactive.js" defer></script>
 </body>
 </html>
