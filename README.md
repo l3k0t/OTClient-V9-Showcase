@@ -77,8 +77,6 @@ O desenvolvimento utiliza o **OTClient Redemption** como referência e fonte de 
 | **15.11** | Login e jogo modernos com referência Canary | Integração em testes |
 | **15.25** | Expandir a compatibilidade moderna | Implementação e validação em andamento |
 
-> 🚧 **Importante:** integrar código, compilar e empacotar o cliente **não equivale** a comprovar login, renderização e gameplay perfeitos em todos os protocolos. Este é um **showcase de desenvolvimento**, não uma versão final ou anúncio de compatibilidade integral.
-
 ## Roadmap público
 
 - [x] Modernizar a compilação do cliente para C++23.
@@ -99,5 +97,3 @@ Se você acompanha o desenvolvimento de OTServ e OTClient, **favorite este repos
 **Desenvolvimento:** [L3K0T no GitHub](https://github.com/l3k0t)
 
 ---
-
-<sub>Esta é uma página pública de apresentação. Não contém a source privada do cliente, arquivos internos de build, chaves, assets oficiais de Tibia ou binários do projeto. O OTCv8 e o OTClient Redemption conservam os créditos e licenças de seus autores originais. As artes desta página são ilustrativas e não são capturas do cliente em execução.</sub>
